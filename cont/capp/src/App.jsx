@@ -2,6 +2,8 @@ import { useState,useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Rf from './Rf'
+import Toys from './Toys'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,10 +16,8 @@ const but=()=>{
 
   return (
     <>
-    <div>
-      <button onClick={but}>Press</button>
-      <h6>Press is {count} times</h6>
-    </div>
+   <Rf></Rf>
+   <Toys></Toys>
       
     </>
   )

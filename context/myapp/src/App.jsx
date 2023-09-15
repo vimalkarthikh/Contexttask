@@ -7,7 +7,7 @@ function App() {
  
   return (
    <PriceProvider>
-    <div> HAI<P1></P1></div>
+    <P1></P1>
     
    </PriceProvider>
   )

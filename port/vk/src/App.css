@@ -1,0 +1,59 @@
+.nav-bar{
+  background-color: black  ;
+  text-align: center;
+  height: 2cm;
+  border-radius: .3cm;
+  align-items: center;
+  
+}
+.hn{
+  color: whitesmoke;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 3rem;padding: 5px;
+}
+.cd{
+  padding: 5px;
+}
+.pn{
+  display: flex;
+  margin-top: 5px;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  color: aliceblue;
+  font-family:monospace;
+  background: linear-gradient(227deg, #246655, #734a94, #66e1d7);
+  align-content: space-between;
+  padding: 5px;border-radius: .3cm;
+  background-size: 100% 200%;
+
+  -webkit-animation: AnimationName 5s ease infinite;
+  -moz-animation: AnimationName 5s ease infinite;
+  animation: AnimationName 5s ease infinite;
+  
+}
+.pp{
+  height: 7cm;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:70% 0%}
+  50%{background-position:31% 100%}
+  100%{background-position:70% 0%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:70% 0%}
+  50%{background-position:31% 100%}
+  100%{background-position:70% 0%}
+}
+@keyframes AnimationName {
+  0%{background-position:70% 0%}
+  50%{background-position:31% 100%}
+  100%{background-position:70% 0%}
+}
+@media screen {
+  min-width::after{
+    display: flex;
+    flex-direction: column;
+  }
+}

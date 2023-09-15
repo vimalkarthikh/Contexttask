@@ -2,6 +2,7 @@ import React ,{useContext}from 'react'
 import { PriceCont } from './Prod'
 
 function P1() {
+  
   const {p1}=useContext(PriceCont);
     return (
         <><div className='nod' >
