@@ -1,42 +1,43 @@
-import React,{useContext,useState} from 'react'
-import { PriceContext } from './PriceContext'
+import { useState } from 'react'
+import Data from './Data.json'
+import './App.css'
 
-function Change() {
-   const[count,setCount]=useState(0);
-    const{setCost}=useContext(PriceContext);
-    const{cost}=useContext(PriceContext);
-
-    const cst=()=>{setCount(count+1);}
-    const dec=()=>{if(count!=0) setCount(count-1);}
-    setCost(count*549);
+function App() {
+  const [count, setCount] = useState(0)
 
   return (
-    <>
-    <div class="card mb-3" >
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="https://i.dummyjson.com/data/products/1/thumbnail.jpg" alt="..."></img>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">iPhone 9</h5>
-        <p class="card-text">An apple mobile which is nothing like apple  </p>
-        <p class="card-text">Brand: Apple &emsp;&emsp;&emsp;category: smartphones</p>
-        <hr />
-        <p class="card-text">Rating: 4.69 &emsp;Stock: 94
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <b><i>$ 549</i></b></p>
-        <p className='but'><button onClick={cst} className='atc'>+</button><h6 className='ct'>{count}</h6><button onClick={dec} className='atc'>-</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        <h6>Prod cost is : {cost}</h6></p>
-        <hr></hr>
-        
+    <><div className='nod' >
+      {
+        Data.map((i)=>(
+          <>
+          <div key={i.id} >
+          <div className="card mb-3">
+            <div className="row no-gutters">
+              <div className="col-md-4">
+                <img src={i.thumbnail} className='pic'></img>
+              </div>
+              <div className="col-md-8">
+                <div className="card-body"><br></br>
+                  <h3 className="card-title">{i.title}</h3>
+                  <p className="card-text">{i.description}</p>
+                  <p className="card-title">Brand:{i.brand}&nbsp;&nbsp; Catergory: {i.category}</p>
+                  <hr></hr>
+                  <p className="card-text">Rating: {i.rating} &nbsp;&nbsp; Stock: {i.stock} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;
+                  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<strong> Price: ${i.price}</strong></p>
+                  
+                 </div>
+              </div>
+              <hr></hr>
+            </div>
+          </div>
+          </div></>
+        ))
+       
+      }
       </div>
-    </div>
-  </div>
-</div>
-    
     </>
   )
 }
 
-export default Change
+export default App
