@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 let items=[{id:1,age:23,name:"Vimal"},{id:2,age:25,name:"Gopi"}];
 
-app.get("/getItems",(req,res)=>{res.json();});
+app.get("/getItems",(req,res)=>{res.json(items);});
 
 app.post("/postItems",(req,res)=>{
     const newItems=req.body;
